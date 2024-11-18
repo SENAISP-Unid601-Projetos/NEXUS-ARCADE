@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cutscene</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000; /* Fundo preto */
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .cutscene-container {
+      width: 800px;
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      text-align: center;
+      color: white;
+      opacity: 0; /* Inicialmente invisível */
+      transform: scale(0.9); /* Levemente menor no início */
+      transition: opacity 1s ease, transform 1s ease; /* Transição suave */
+    }
+
+    /* Quando a página carregar, a classe "mostrar" será adicionada */
+    .cutscene-container.mostrar {
+      opacity: 1; /* Fica visível */
+      transform: scale(1); /* Tamanho normal */
+    }
+
+    .icones-personagens {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .icones-personagens img {
+      width: 220px;  /* Aumenta um pouco a largura das imagens */
+      height: 300px; /* Defina a altura exata para evitar distorção */
+      object-fit: cover; /* Garante que as imagens preencham o espaço sem distorcer */
+      transition: transform 0.3s ease, filter 0.3s ease;
+      border-radius: 5px; /* Mantém as bordas levemente arredondadas */
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .icones-personagens img.falando {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    .icones-personagens img:not(.falando) {
+      filter: grayscale(80%);
+      opacity: 0.6;
+    }
+
+    .dialogo {
+      font-size: 18px;
+      margin-bottom: 20px;
+      min-height: 60px;
+    }
+
+    .controles {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+    #iconeNpc {
+    width: 230px; /* Novo tamanho para a largura da imagem do NPC */
+    height: 280px; /* Novo tamanho para a altura da imagem do NPC */
+    object-fit: contain; /* Mantém a proporção sem cortar a imagem */
+  }
+
+
+    .controles button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .controles button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .controles img {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    a[disabled] {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cutscene-container" id="cutsceneContainer">
+    <div class="icones-personagens">
+      <img id="iconeCavaleiro" src="../IMG/PrincipeCtc.png" alt="Personagem Principal">
+      <img id="iconeNpc" src="IMG/noc2.png" alt="Bot">
+    </div>
+
+    <div class="dialogo" id="dialogo">
+      <!-- As falas serão inseridas aqui -->
+    </div>
+
+    <div class="controles">
+      <button id="botaoProximo">
+        <img src="https://img.icons8.com/ios-filled/50/000000/forward.png" alt="Próxima fala"> 
+      </button>
+      <a id="linkIniciarJogo" href="teste4.html" disabled>
+        <button id="botaoIniciarJogo" disabled>Iniciar Jogo</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Array com as falas
+    const dialogos = [
+      { texto: "...", personagem: "cavaleiro" },
+      { texto: "Consegui passar...Por pouco", personagem: "cavaleiro" },
+      { texto: "...Ei", personagem: "npc" },
+      { texto: "Você conseguiu, e sem nenhum arranhão...que incrivel...", personagem: "npc" },
+      { texto: "Falta muito até o castelo da bruxa?", personagem: "cavaleiro" },
+      { texto: "Sinto que não tenho muito tempo para salvar a princesa", personagem: "cavaleiro" },
+      { texto: "O castelo não está muito longe daqui...", personagem: "npc" },
+      { texto: "Ninguem nunca conseguiu entrar no castelo...", personagem: "npc" },
+      { texto: "O defensor  do castelo é um mago...", personagem: "npc" },
+      { texto: "Ele derrotou muitas pessoas...", personagem: "npc" },
+      { texto: "Eu tenho que derrotar ele...Essa é a minha unica função...", personagem: "cavaleiro" },
+      { texto: "Foi um prazer te conhecer Tina...", personagem: "cavaleiro" }
+    ];
+
+    let indiceAtualDialogo = 0;
+
+    const elementoDialogo = document.getElementById('dialogo'); 
+    const iconeCavaleiro = document.getElementById('iconeCavaleiro');
+    const iconeNpc = document.getElementById('iconeNpc');
+    const botaoProximo = document.getElementById('botaoProximo');
+    const botaoIniciarJogo = document.getElementById('botaoIniciarJogo');
+    const linkIniciarJogo = document.getElementById('linkIniciarJogo');
+    const containerCutscene = document.getElementById('cutsceneContainer');
+
+    // Função para animar o aparecimento da cutscene
+    function mostrarCutscene() {
+      containerCutscene.classList.add('mostrar');
+    }
+
+    // Adiciona a classe de exibição quando a página é carregada
+    window.addEventListener('load', mostrarCutscene);
+
+    // Função para atualizar a imagem de quem está falando
+    function atualizarPersonagem(personagem) {
+      if (personagem === "cavaleiro") {
+        iconeCavaleiro.classList.add('falando');
+        iconeNpc.classList.remove('falando');
+      } else {
+        iconeNpc.classList.add('falando');
+        iconeCavaleiro.classList.remove('falando');
+      }
+    }
+
+    // Mostrar a primeira fala e o primeiro personagem falando
+    elementoDialogo.innerText = dialogos[indiceAtualDialogo].texto;
+    atualizarPersonagem(dialogos[indiceAtualDialogo].personagem);
+
+    // Função para mostrar a próxima fala
+    botaoProximo.addEventListener('click', () => {
+      indiceAtualDialogo++;
+      if (indiceAtualDialogo < dialogos.length) {
+        elementoDialogo.innerText = dialogos[indiceAtualDialogo].texto;
+        atualizarPersonagem(dialogos[indiceAtualDialogo].personagem);
+      } else {
+        // Desabilitar o botão de próxima fala e habilitar o de iniciar o jogo
+        botaoProximo.disabled = true;
+        botaoIniciarJogo.disabled = false;
+        linkIniciarJogo.removeAttribute('disabled'); // Habilita o link
+        elementoDialogo.innerText = "Espero te ver novamente alguma hora!"; //npc
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    min-height: 100vh; /* Garante que o body tenha altura mínima suficiente para rolar */
+}
+
+/* Fundo para a seção Sobre */
+.content-background {
+    background: lightslategray; /* Fundo cinza */
+    width: 100vw;
+    min-height: 200vh; /* Garante que o fundo ocupe pelo menos o dobro da altura da tela */
+    display: flex;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow: hidden; /* Garante que não tenha rolagem interna */
+}
+
+/* Wrapper para centralizar o conteúdo */
+.content-wrapper, .content-wrapper2, .content-wrapper3 {
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para contraste */
+    padding: 40px;
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra para destacar o conteúdo */
+    margin-top: 70px;
+    margin-bottom: 15px; /* Espaço entre os quadrados */
+    opacity: 0; /* Oculta os elementos inicialmente */
+    transition: opacity 0.5s ease-in-out; /* Transição suave para a visibilidade */
+}
+
+/* Logo da empresa */
+.logo {
+    max-width: 180px; /* Ajuste o tamanho da logo conforme necessário */
+    margin-bottom: 20px; /* Espaço abaixo da logo */
+}
+
+/* Estilo do texto */
+h1 {
+    font-size: 1.2em; /* Tamanho do texto ajustado */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0; /* Remove a margem abaixo do texto */
+    text-align: justify; /* Alinhamento do texto */
+}
+
+/* Estilo do cabeçalho e navegação */
+header {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+/* Estilo do conteúdo */
+.fade-in.visible {
+    opacity: 1; /* Torna os elementos visíveis quando a classe 'visible' é adicionada */
+}
+
+/* Estilo para a frase fixa no canto inferior esquerdo */
+.fixed-message {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 100; /* Certifica-se de que a frase fique no topo dos outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .logo {
+        max-width: 150px; /* Ajuste o tamanho da logo em dispositivos menores */
+    }
+
+    h1 {
+        font-size: 1em; /* Ajuste o tamanho do texto para dispositivos menores */
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo com Animações</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Remove a rolagem da página */
+            background-color: #333; /* Cor de fundo para contraste */
+        }
+        canvas {
+            background-color: black;
+            display: block;
+            width: 100vw; /* Largura total da tela */
+            height: auto; /* Mantém a proporção */
+        }
+        #controles {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            z-index: 1000; /* Certifique-se de que os controles fiquem acima do canvas */
+        }   
+
+        
+    </style>
+</head>
+<body>
+
+    <canvas id="meuCanvas"></canvas>
+    
+    <script type="module" src="JS/TerceiraFase.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+
+/* Estilo básico da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    
+}
+
+/* Imagem de fundo desfocada */
+.backgroundIni {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../IMG/imgCastelo.png') no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+/* Estilo das seções */
+main {
+    padding: 100px 20px 20px;
+}
+
+section {
+    margin: 50px 0;
+    text-align: center;
+}
+
+/* Estilo do conteúdo do início */
+#JD {
+    font-size: 2em; /* Aumenta o tamanho do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 5px; /* Adiciona um espaço acima do texto */
+    color: white; /* Define a cor do texto */
+}
+
+#cor {
+    color: white;
+    font-weight: bold;
+}
+
+#inicio {
+    padding-top: 50px;
+}
+
+/* Estilo do botão */
+.btn {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none; /* Remove sublinhado do link */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Press Start 2P', cursive; /* Aplica a fonte pixelada */
+}
+
+/* Efeito de hover para o botão */
+.btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+    
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}

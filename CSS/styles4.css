@@ -1,0 +1,132 @@
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    min-height: 100vh; /* Garante altura mínima do body */
+}
+
+/* Fundo para a seção Sobre */
+.content-background {
+    background: rgb(73, 74, 74); /* Fundo cinza escuro */
+    width: 100vw;
+    min-height: 200vh; /* Garante que o fundo ocupe pelo menos o dobro da altura da tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* Evita rolagem interna */
+}
+
+/* Wrapper para centralizar o conteúdo */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(99, 99, 99, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin: 20px 0;
+    opacity: 0; /* Oculta os elementos inicialmente */
+    transition: opacity 0.5s ease-in-out; /* Transição suave para visibilidade */
+}
+
+/* Imagem e texto lado a lado */
+.logo {
+    max-width: 200px; /* Define o tamanho máximo da imagem */
+    margin-right: 20px;
+}
+
+/* Estilo para a frase fixa no canto inferior esquerdo */
+.fixed-message {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 100; /* Certifica-se de que a frase fique no topo dos outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+h1 {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: white;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Cabeçalho e navegação */
+header {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+/* Fade-in para o conteúdo */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 150px; /* Ajusta o tamanho da logo em dispositivos menores */
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 1em; /* Ajusta o tamanho do texto em dispositivos menores */
+    }
+}

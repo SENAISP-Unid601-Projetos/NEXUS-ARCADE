@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capa Inicial do Jogo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    .container {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../IMG/imgCastelo.png'); /* Adicione o caminho da sua imagem de fundo */
+      background-size: cover;
+      filter: blur(8px);
+      z-index: -1;
+    }
+
+    .content {
+      text-align: center;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title-image {
+      max-width: 70%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 20px;
+      color: white;
+      background-color: #000;
+      border: 2px solid #fff;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      margin: 10px 0;
+      transition: background-color 0.3s, transform 0.3s;
+      width: 220px; /* Definindo uma largura fixa para todos os botões */
+      text-align: center; /* Centraliza o texto dentro do botão */
+    }
+
+    .btn:hover {
+      background-color: #444;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Imagem de fundo desfocada -->
+    <div class="background"></div>
+
+    <!-- Conteúdo centralizado -->
+    <div class="content">
+      <!-- Título do jogo como imagem -->
+      <img src="../IMG/pronto.png" alt="Título do Jogo" class="title-image"> <!-- Adicione o caminho da sua imagem de título -->
+
+      <!-- Botões abaixo do título -->
+      <a href="telaCutScene.html" class="btn">Iniciar Jogo</a>
+      <a href="index.html" class="btn">Saiba Mais</a>
+    </div>
+  </div>
+
+</body>
+</html>
