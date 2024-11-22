@@ -77,9 +77,9 @@ const intervaloEntreAtaquesPersonagem = 500;
 const larguraFrameLesma = 72;
 const alturaFrameLesma = 36;
 const imagemMovimentacaoLesma = new Image();
-imagemMovimentacaoLesma.src = 'IMG/lesmaAndar.png'; // Sprite de movimento do lesma
+imagemMovimentacaoLesma.src = "IMG/lesmaAndar.png"; // Sprite de movimento do lesma
 const imagemAtaqueLesma = new Image();
-imagemAtaqueLesma.src = 'IMG/lesmaAttk.png'; // Sprite de ataque do lesma
+imagemAtaqueLesma.src = "IMG/lesmaAttk.png"; // Sprite de ataque do lesma
 
 let posXLesma = 3200;
 let posYLesma = 600;
