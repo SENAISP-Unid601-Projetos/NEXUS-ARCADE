@@ -40,7 +40,7 @@ const alturaPlataforma = 702;
 const larguraCenario = 3220.7447;
 // Configuração vidas
 const imagemCoracao = new Image();
-imagemCoracao.src = 'IMG/Coracao.png';
+imagemCoracao.src = 'IMG/coracao.png';
 
 // Configurações do Personagem Principal
 const larguraFramePersonagem = 64;
