@@ -45,7 +45,7 @@ function iniciarAudio() {
 
 // Configurações do Cenário
 const imagemCenario = new Image();
-imagemCenario.src = 'IMG/CASTELO.png';
+imagemCenario.src = "IMG/CASTELO.png";
 const alturaPlataforma = 749;
 const larguraCenario = 3220.7447;
 
@@ -53,13 +53,13 @@ const larguraCenario = 3220.7447;
 const larguraFramePersonagem = 64;
 const alturaFramePersonagem = 64;
 const imagemMovimentacao = new Image();
-imagemMovimentacao.src = 'IMG/PrincipeAndar.png';
+imagemMovimentacao.src = "IMG/PrincipeAndar.png";
 const imagemAtaque = new Image();
-imagemAtaque.src = 'IMG/PrincipeAttk.png';
+imagemAtaque.src = "IMG/PrincipeAttk.png";
 const imagemFundoPausa = new Image();
-imagemFundoPausa.src = 'IMG/CASTELOpause.png';
+imagemFundoPausa.src = "IMG/CASTELOpause.png";
 const imagemCoracao = new Image();
-imagemCoracao.src = 'IMG/Coracao.png';
+imagemCoracao.src = "IMG/coracao.png";
 
 let posXPersonagem = 3200;
 let posYPersonagem = 550;
@@ -80,11 +80,11 @@ const alturaFrameGoblin = 250;
 // Imagens das sprites (substitua pelos seus sprites)
 // Imagens das sprites do goblin
 const imagemMovimentacaoGoblin = new Image();
-imagemMovimentacaoGoblin.src = 'IMG/mover.png'; // Caminho para a sprite de movimentação do goblin
+imagemMovimentacaoGoblin.src = "IMG/mover.png"; // Caminho para a sprite de movimentação do goblin
 const imagemAtaqueGoblin = new Image();
-imagemAtaqueGoblin.src = 'IMG/Attack2.png'; // Caminho para a sprite de ataque 2 do goblin
+imagemAtaqueGoblin.src = "IMG/Attack2.png"; // Caminho para a sprite de ataque 2 do goblin
 const imagemMorteGoblin = new Image(); // Cria uma nova imagem para a animação de morte
-imagemMorteGoblin.src = 'IMG/morte.png'; // Substitua pelo caminho correto da imagem de morte
+imagemMorteGoblin.src = "IMG/morte.png"; // Substitua pelo caminho correto da imagem de morte
 
 
 let posXGoblin = 0;
