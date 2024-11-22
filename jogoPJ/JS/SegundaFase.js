@@ -45,7 +45,7 @@ function iniciarAudio() {
 
 // Configurações do Cenário
 const imagemCenario = new Image();
-imagemCenario.src = "IMG/FundoLago.png";
+imagemCenario.src = "IMG/fundoLago.png";
 const alturaPlataforma = 748;
 const larguraCenario = 3220.7447;
 
@@ -59,7 +59,7 @@ imagemAtaque.src = "IMG/PrincipeAttk.png";
 const imagemCoracao = new Image();
 imagemCoracao.src = "IMG/coracao.png";
 const imagemFundoPausa = new Image();
-imagemFundoPausa.src = "IMG/lagoSomb.jpg";
+imagemFundoPausa.src = "IMG/LagoSomb.jpg";
 
 let posXPersonagem = 955;
 let posYPersonagem = 540;
