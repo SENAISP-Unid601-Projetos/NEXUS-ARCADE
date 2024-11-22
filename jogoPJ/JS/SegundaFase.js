@@ -457,10 +457,9 @@ function verificarColisao() {
 }
 
 
-
+const tamanhoCoracao = 50; // Defina o tamanho desejado para os corações
 // Função para Desenhar as Vidas
 function desenharVidas() {
-    const tamanhoCoracao = 50; // Defina o tamanho desejado para os corações
     for (let i = 0; i < vidas; i++) {
         contexto.drawImage(imagemCoracao, 10 + i * (tamanhoCoracao + 10), 10, tamanhoCoracao, tamanhoCoracao); // Aumente o tamanho aqui
     }
